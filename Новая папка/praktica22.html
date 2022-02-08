@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+	img{
+		 
+		  animation-name: Asan;
+		  animation-duration: 3s;
+		  animation-iteration-count: infinite;
+
+    }
+    @keyframes Asan{
+    	0%{
+    		transform: rotate(0.2turn);
+    	}
+    	50%{
+    		transform: rotate(-0.2turn);
+    	}
+    	100%{
+    		transform: rotate(0.2turn);
+    	}
+
+    }
+</style>
+<body>
+		<img src="https://hsto.org/webt/et/vg/um/etvgumvdqz6_rs1dp3kjyjt-spm.png">
+
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+	.card{width: 700px;
+		  height: 700px;
+		  border:2px solid black;
+		  position: relative;
+		  border-radius: 10px
+x
+	}
+	.a{width: 100px;
+	   height: 100px;
+	   background-color: blue;
+	   position: absolute;
+	   border-radius: 10px;
+	   animation-name: asan;
+	   animation-duration: 5s;
+	   animation-iteration-count: infinite;
+	   animation-delay: 1s;
+	   animation-direction: alternate-reverse;
+
+	}
+	@keyframes asan{
+		0%{
+			top: 0%;
+			left: 0%;
+		}
+		30%{
+			top: 0%;
+			left: 100%;
+			background-color: yellow;
+			transform: translate(-100%, 0%);
+		}
+		50%{
+			top: 100%;
+			left: 100%;
+			background-color: red;
+			transform: translate(-100%,-100%);
+		}
+		80%{
+			top: 100%;
+			left: 0%;
+			background-color: grey;
+			transform: translate(0%,-100%);
+		}
+		100%{
+			top: 0%;
+			left: 0%;
+			background-color: green;
+			transform: translate(0%, 0%);
+		}
+
+
+    }
+	
+</style>
+<body>
+	<div class="card">
+		<div class="a"></div>
+	</div>
+</body>
+</html>

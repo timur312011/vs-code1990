@@ -1,0 +1,101 @@
+.card{
+	width: 1515px;
+	height: 140px;
+	background-color: #EDECEB;
+	display: flex;
+	
+}
+.black{
+	width: 1515px;
+	height: 30px;
+	background-color: black;
+	display: flex;
+}
+img{
+	margin-left: 240px;
+	margin-top: 20px;
+}
+.input{
+	width: 300px;
+	height: 25px;
+	border-radius: 5px;
+	margin-left: 100px;
+	margin-top: 60px
+
+}
+.voi{
+	margin-top: 65px;
+	margin-left: 100px
+}
+.nov{
+	color: white;
+	font-size: 15px;
+	margin-left: 300px;
+	margin-top: 5px
+}
+.sel{
+	margin-left: 15px;
+	color: white;
+	background-color: black
+}
+.v3{
+	margin-left: 15px;
+	font-size: 15px;
+	color: white;
+	margin-top: 5px
+}
+.v4{
+	margin-top: 5px;
+	margin-left: 50px;
+	background-color: red;
+	color: white;
+}
+.grey{
+	width: 1100px;
+	height: 300px;
+	border:2px solid #EDECEB ;
+	margin-top: 120px;
+	margin-left: 200px;
+	display: flex;
+}
+.img1{
+	width: 700px;
+	height: 300px;
+	margin-left: -5px;
+	margin-top: -0px;
+	display: inline-block;
+
+}
+.det{
+	width: 415px;
+	height: 100px;
+	margin-left: 5px;
+	margin-top: -0px
+	
+}
+.det2{
+	width: 415px;
+	height: 100px;
+	margin-left: -400px;
+	margin-top: 100px
+}
+.det3{
+	width: 415px;
+	height: 100px;
+	margin-left: -400px;
+	margin-top: 200px
+}
+.but{
+	margin-top: 20px;
+	font-size: 30px;
+	margin-left: 200px
+}
+.f3{
+	margin-left: 200px
+}
+.f4{
+	margin-left: 70px	
+}
+.dis{
+	display: flex;	
+}

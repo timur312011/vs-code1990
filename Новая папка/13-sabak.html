@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+	.card{width: 0px;
+		  height: 60px;
+		  background-color: blue;
+		  color: red;
+		  font-size: 40px;
+		  border-radius: 10px;
+		  text-align: center;
+		  box-shadow: 3px 3px 4px black;
+		  text-shadow: 3px 3px 3px black;
+		  animation-name: Asan;
+		  animation-duration: 3s;
+		  animation-iteration-count: infinite;
+		  animation-direction: alternate;
+
+
+	}
+	@keyframes Asan {
+			0%{
+				width: 0px;
+				background-color: red
+			}
+			50%{
+				width: 100%;
+				background-color: yellow
+			}
+			100%{
+				width: 0px;
+				background-color: blue
+			}
+	}
+</style>
+<body>
+	<div class="card">hello</div>
+</body>
+</html>

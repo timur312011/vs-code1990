@@ -1,0 +1,652 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+ <label><input id="one" type="checkbox" onchange="fun1()">Пример checkbox</label>	
+
+
+<input type="radio" name="r1" value="5"> 0
+<input type="radio" name="r1" value="53"> 1
+<input type="radio" name="r1" value="535"> 2
+<button onclick="fun1()">проверить какой из элементов выбран</button>
+<script type="text/javascript">
+function fun1(){
+	let radi = document.getElementsByName('r1');
+	for (let i = 0; i<radi.length; i++){
+		if(radi[i].checked){
+			alert('выбран ' +i+ ' элемент');
+		}
+	}
+		
+}
+
+
+
+
+
+
+
+
+
+	function fun1() {
+		let chbox = document.getElementById('one');
+	if(chbox.checked){
+		alert('выбран');
+	}else{
+		alert('не выбран');
+	}
+	}
+
+</script>
+</body>
+</html>
+
+ -->
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<select name="" id="mySelect" onchange="fun1()">
+		<option value="">apple</option>
+		<option value="">orange</option>
+		<option value="">pineapple</option>
+		<option value="">banana</option>
+	</select>
+<script type="text/javascript">
+	function fun1 (){
+		let sel = document.getElementById('mySelect').selectedIndex;
+		let options = document.getElementById('mySelect').options;
+		alert('выбрана опция ' +options[sel].text);
+	}
+
+
+
+</script>
+</body>
+</html> -->
+
+
+
+
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+	.test{
+		width: 20px;
+		height: 20px;
+		background-color: green;
+	}
+</style>
+<body>
+	<input type="range" min="0" max="100" step="2" oninput="fun1()" id="r1">
+	<div class="test" id="test"></div>
+<script type="text/javascript">
+	function fun1(){
+		let rng = document.getElementById('r1');
+		let div  = document.getElementById('test');
+		div.style.width = rng.value+ 'px';
+	}
+	 
+</script>
+</body>
+</html> -->
+
+
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+	#block{
+		width: 200px;
+		height: 100px;
+		background-color: green;
+	}
+</style>
+<body>
+	<div class="block1">
+		<p>Верхний левый угол:
+		<input type="range" id="rtl" min="0" max="100" value="0" oninput="fun1()">
+		<input type="text" id="ttl" value="0">
+		</p>
+		<p>Верхний правый угол:
+		<input type="range" id="rtr" min="0" max="100" value="0" oninput="fun1()">
+		<input type="text" id="ttr" value="0">
+		</p>
+		<p>Нижний правый угол:
+		<input type="range" id="rbr" min="0" max="100" value="0" oninput="fun1()">
+		<input type="text" id="tbr" value="0">
+		</p>
+		<p>Нижний левый угол:
+		<input type="range" id="rbl" min="0" max="100" value="0" oninput="fun1()">
+		<input type="text" id="tbl" value="0">
+		</p>
+	</div>
+	<div id="block"></div>
+<script type="text/javascript">
+	function fun1(){
+		let rtl = document.getElementById('rtl').value;
+		let ttl = document.getElementById('ttl');
+		let rtr = document.getElementById('rtr').value;
+		let ttr = document.getElementById('ttr');
+		let rbr = document.getElementById('rbr').value;
+		let tbr = document.getElementById('tbr');
+		let rbl = document.getElementById('rbl').value;
+		let tbl = document.getElementById('tbl');
+
+
+		let block = document.getElementById('block');
+		
+		ttl.value=rtl;
+		ttr.value=rtr;
+		tbr.value=rbr;
+		tbl.value=rbl;	
+
+		block.style.borderRadius=rtl+'px ' +rtr +'px ' +rbr + 'px ' +rbl+'px ';
+}
+</script>
+</body>
+</html>
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+	.menu-item{
+		border: 2px solid #66cdaa;
+		display: inline-block;
+		position: relative;
+		cursor: pointer;
+	}
+	.menu-item .submenu{
+		height: 40px;
+		width: 120px;
+		background-color: green;
+		position: absolute;
+		cursor: pointer;
+	}
+</style>
+<body>
+	<div id="nav">
+		<div class="menu-item">
+			Меню 1
+			<div class="submenu">
+				подменю
+			</div></div>
+		<div class="menu-item">
+			Меню 2
+			<div class="submenu">
+				подменю
+			</div></div>
+		<div class="menu-item">
+			Меню 3
+			<div class="submenu">
+				подменю
+			</div></div>
+	</div>
+<script type="text/javascript">
+	document.getElementById('nav').onmouseover = function(event){
+		let target = event.target;
+		if(target.className == 'menu-item'){
+			let s = target.getElementsByClassName('submenu');
+			closeMenu();
+			s[0].style.display = 'block';
+		}
+	}
+
+	document.onmouseover = function(event){
+		let target = event.target;
+		console.log(event.target);
+		if(target.className!= 'menu-item' && target.className!= 'submenu'){
+			closeMenu();
+		}
+	}
+
+	function closeMenu(){
+		let menu = document.getElementById('nav');
+		let subm = document.getElementsByClassName('submenu');
+		for(let i = 0; i < subm.length; i++){
+			subm[i].style.display = 'none';
+		}
+	}
+</script>
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+	.hide{
+		display: none;
+	}
+	.wrap{
+		background-color: #ccc;
+		width: 250px;
+		padding: 200px;
+		height: 500px;
+	}
+	.h1{
+		text-transform: uppercase;
+		color: rgb(0,0,0);
+		text-align: center;
+		padding-top: 20px;
+	}
+	.input{
+		padding: 10px;
+		background-color: rgb(236,234,234);
+		border:1px solid #ccc;
+		border-radius: 8px;
+		width: 80%;
+		margin-left: 20;
+		outline: none;
+		box-sizing: border-box;
+	}
+	.ul{
+		padding-bottom: 50px;
+	}
+	.ul li{
+		font-size: 20px;
+		line-height: 1.4;
+		font-weight: bold;
+	}
+</style>
+<body>
+	<div class="wrap">
+		<h1 class="h1">live search</h1>
+		<input type="text" id="input" class="input">
+		<div>
+			<ol class="ul">
+				<li>яблоко</li>
+				<li>банан</li>
+				<li>апельсин</li>
+				<li>груша</li>
+				<li>виноград</li>
+				<li>лимон</li>
+				<li>арбуз</li>
+				<li>дыня</li>
+				<li>помидор</li>
+				<li>огурец</li>
+				<li>морковь</li>
+			</ol>
+		</div>
+	</div>
+		
+<script type="text/javascript">
+	window.onload = () =>{
+	 let input = document.querySelector('#input')
+	 input.oninput = function(){
+	 	let value = this.value.trim();
+	 	let list = document.querySelectorAll('.ul li');
+
+	 	if(value != ''){
+	 		list.forEach(elem=>{
+	 			if(elem.innerText.search(value) == -1){
+	 				elem.classList.add('hide')
+	 			}
+	 		})
+	 	}else{
+	 		list.forEach(elem => {
+	 			elem.classList.remove('hide')
+	 		})
+	 	}
+
+	 	console.log(this.value);
+	 }
+	}
+</script>
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+	.modal{
+		display: none;
+		position: fixed;
+		z-index: 1;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		overflow: auto;
+		background-color: rgba(0,0,0,0.8);
+	}
+	.modal-content{
+		background-color: #FEFEFE;
+		margin: 15% auto;
+		padding: 20px;
+		border: 1px solid #888;
+		width: 80%;
+	}
+	.close{
+		color: #aaa;
+		float: right;
+		font-size: 28px;
+		font-weight: bold;
+	}
+
+</style>
+<body>
+	<button id="myBtn">open modal</button>
+	<div id="myModal" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<p>модальное окно</p>
+		</div>
+	</div>
+<script type="text/javascript">
+	let modal = document.getElementById("myModal");
+	let btn = document.getElementById("myBtn");
+	let span = document.getElementsByClassName("close")[0];
+
+
+	btn.onclick = function (){
+		modal.style.display = "block"
+	}
+	span.onclick = function (){
+		modal.style.display = "none"
+	}
+	window.onclick = function (event){
+		if(event.target == modal){
+			modal.style.display = "none"
+		}
+	}
+</script>
+</body>
+</html>
+ -->
+
+
+
+
+
+
+
+<!-- 
+ <!DOCTYPE html>
+ <html>
+ <head>
+ 	<title></title>
+ </head>
+ <body>
+ 	<div>
+ 		<input type="text" class="i-1">
+ 	</div>
+ <script type="text/javascript">
+ 	
+ </script>
+ </body>
+ </html> -->
+
+
+
+
+
+
+
+
+
+
+
+<!--  <!DOCTYPE html>
+ <html>
+ <head>
+ 	<title></title>
+ </head>
+ <body>
+ 	<div id="div" style="position: absolute; font-size: 50px; color: green; top: 50%; left: 50%; transform:translate(-50, -50);"></div>
+ 	<span>00</span>
+ 	<span>00</span>
+ <script type="text/javascript">
+ 	let div = document.getElementById("div");
+ 	let ss = 0;
+ 	let stop_ = null;
+ 	function arr(){
+ 	stop_ = setInterval(() =>{
+	div.innerHTML = ss++
+ 	},100);
+
+ 	}
+ 	arr()
+ 	let a = true;
+ 
+ 
+
+
+ 	document.body.onkeydown = (e) => {
+ 		if(e.keyCode == 32 && a){
+ 			a = !a;
+ 			clearInterval(stop_)
+ 		}else if(e.keyCode == 32 && ! a){
+ 			a = !a;
+ 			arr()
+ 		}
+ 	}
+
+
+ </script>
+ </body>
+ </html>
+ -->
+
+
+
+
+
+<!DOCTYPE html>
+ <html>
+ <head>
+ 	<title></title>
+ </head>
+ <style type="text/css">
+
+ 	.container{
+ 		width: 700px;
+ 		height: 500px;
+ 		position: relative;
+ 		border:1px solid red;
+ 	}
+ 	.box{
+ 		width: 50px;
+ 		height: 50px;
+ 		position: absolute;
+ 		top: 0px;
+ 		left: 0px;
+ 		background-color: green;
+ 	}
+ </style>
+ <body>
+ 	<div class="container">
+ 		<div class="box" id="box"></div>
+ 	</div>
+ <script type="text/javascript">
+ 	const box = document.getElementById('box');
+ 	let current = '';
+ 	let _top = 0;
+ 	let _left = 0;
+
+ 	document.body.onkeyup = (e) => {
+ 		current = e.key;
+ 	}
+ 	setInterval(() => {
+ 		if(current === "ArrowRight"){
+ 			_left += 5;
+ 		}else if (current === "ArrowLeft"){
+ 			_left -=5;
+ 		}else if (current === "ArrowUp"){
+ 			_top -= 5;
+ 		}else if (current === "ArrowDown"){
+ 			_top += 5;
+ 		};
+
+ 		if (_top > 450){
+ 			_top = 0;
+ 		}else if (_left > 650){
+ 			_left = 0;
+ 		}else if (_left < 0){
+ 			_left = 650;
+ 		}else if (_top < 0){
+ 			_top = 450;
+ 		}
+ 		box.style.left = `${_left}px`;
+ 		box.style.top = `${_top}px`;
+ 	}, 50);
+
+ </script>
+ </body>
+ </html>
+
+
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+	
+</style>
+<body style="background-color: red">
+  <div  id="mass">
+	<span id="s" class="one">00</span>;
+	<span id="g" class="two">00</span>;
+  </div>
+<script type="text/javascript">
+	let one = document.getElementById("s");
+	let two = document.getElementById("g");
+	let f = 0;
+	let g = 0;
+	let bull = true;
+	let s = '';
+	document.body.onkeyup = function(e)=>{
+		if(e.key === ""){
+			s = setInterval (() =>{
+			document.body.style.background-color = "green"
+			g++;
+			two.innerHTML = g > 9? g : "0"+g
+			}
+		}
+	}
+</script>
+</body>
+</html> -->
+
+
+
+
+
+
+<!--  <!DOCTYPE html>
+ <html>
+ <head>
+ 	<title></title>
+ </head>
+ <body style="background-color: red">
+ 	<div id="div" style="position: absolute; font-size: 50px; color: green; top: 50%; left: 50%; transform:translate(-50, -50);"></div>
+ 	<div style="font-size: 50px" align="center">
+ 	<span id="s" class="one">00</span> :
+ 	<span id="g" class="two">00</span>
+    </div>
+ <script type="text/javascript">
+ 	let div = document.getElementById("div");
+ 	let one = document.getElementById("s");
+ 	let two = document.getElementById("g");
+ 	let f = 0;
+	let g = 0;
+
+	let a = true;
+	let s = '';
+ 	
+
+
+ 	document.body.onkeyup = (e)=>{
+		if(e.key === " " && a){
+			a = !a;
+			s = setInterval (() =>{
+			document.body.style.backgroundColor = "green"
+			g++;
+			two.innerHTML = g > 9? g : "0"+g;
+
+			if(g==60){
+			g = 0;
+			f++
+			one.innerHTML = f > 9? f : "0"+f
+			}
+
+			}, 100)
+
+		}else if(e.keyCode == 32 && !a){
+			clearInterval(s)
+ 			a = !a;
+ 		}
+	}
+
+
+ </script>
+ </body>
+ </html> -->
